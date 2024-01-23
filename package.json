@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fahd-111/Tic-Tac-Toe-Game.git"
+  },
+  "keywords": [
+    "Games",
+    "Tic_Tac_Toe"
+  ],
+  "author": "Fahad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fahd-111/Tic-Tac-Toe-Game/issues"
+  },
+  "homepage": "https://github.com/fahd-111/Tic-Tac-Toe-Game#readme"
+}
