@@ -1,6 +1,7 @@
-.App {
-  text-align: center;
-}
+/*.App {*/
+/*  text-align: center;*/
+/*  background-color: #282c34;*/
+/*}*/
 
 .App-logo {
   height: 40vmin;
@@ -11,6 +12,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.Board{
+
 }
 
 .App-header {

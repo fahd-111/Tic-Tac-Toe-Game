@@ -6,8 +6,141 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.App {
+  text-align: center;
+  background-color: #001133;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  align-content:center;
+  height: 100vh;
+
+
+}
+
+                                                     /* CSS */
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.StartPage{
+
+
+}
+
+.square{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content:center;
+  height:110px;
+  width: 110px;
+  margin:10px;
+  font-size: 24px;
+  line-height: 60px;
+  background:  #FFF;
+}
+.Board {
+  display: flex;
+  align-items: center;
+  border-radius:15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #FFE79E;
+  height: 500px;
+  width: 500px;
+  align-content: center;
+}
+.game-info{
+  display: flex;
+  align-items: center;
+  height: 98px;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 20px;
+}
+.board-row {
+  align-items: center;
+  display: flex;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+
+                                                     /* CSS */
+ .button-36 {
+   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+   border-radius: 8px;
+   border-style: none;
+   box-sizing: border-box;
+   color: #FFFFFF;
+   cursor: pointer;
+   flex-shrink: 0;
+   font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+   font-size: 25px;
+   font-weight: 400;
+   height: 5rem;
+   padding: 2rem 5rem;
+   text-align: center;
+   text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+   transition: all .5s;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+ }
+
+.button-36:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
 }
