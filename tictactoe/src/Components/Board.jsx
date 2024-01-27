@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import Cross from "./Cross";
 import Circle from "./Circle";
+import WinnerPopup from "./WinnerPopup";
 
-
-// Helper function to determine the winner
 const calculateWinner = (squares) => {
     const lines = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -33,8 +32,6 @@ export default function Board() {
         setXIsNext(!xIsNext);
     };
 
-
-
     const startNewGame = () => {
         setSquares(Array(9).fill(null));
         setXIsNext(true);
@@ -43,14 +40,28 @@ export default function Board() {
     return (
         <>
             <div className="Board">
-                {squares.map((square, i) => (
-                    <button className="square" onClick={() => handleClick(i)} key={i}>
-                        {square === 'X' ? <Cross /> : square === 'O' ? <Circle /> : null}
-                    </button>
+                {[0, 3, 6].map((startIdx) => (
+                    <div key={startIdx} className="board-row">
+                        {[0, 1, 2].map((col) => {
+                            const i = startIdx + col;
+                            return (
+                                <button
+                                    key={i}
+                                    className="square"
+                                    onClick={() => handleClick(i)}
+                                >
+                                    {squares[i] === 'X' ? <Cross /> : squares[i] === 'O' ? <Circle /> : null}
+                                </button>
+                            );
+                        })}
+                    </div>
                 ))}
             </div>
+            {winner ?
+                <WinnerPopup winner={winner} resetGame={startNewGame}/>
+                : ( '' )
+            }
             <div className="game-info">
-                <div>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</div>
                 <button onClick={startNewGame} className='button-29'>Restart Game</button>
             </div>
         </>

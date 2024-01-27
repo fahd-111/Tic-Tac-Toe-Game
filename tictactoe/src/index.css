@@ -65,7 +65,7 @@ body {
   transform: translateY(2px);
 }
 .StartPage{
-
+width: calc(80% - 350px);
 
 }
 
@@ -82,14 +82,14 @@ body {
   background:  #FFF;
 }
 .Board {
-  display: flex;
+  display: grid;
   align-items: center;
+  flex-direction: column;
   border-radius:15px;
+  padding: 20px;
   flex-wrap: wrap;
   justify-content: center;
   background: #FFE79E;
-  height: 500px;
-  width: 500px;
   align-content: center;
 }
 .game-info{
@@ -103,6 +103,7 @@ body {
 .board-row {
   align-items: center;
   display: flex;
+  width: 100%;
 }
 
 code {
@@ -114,6 +115,9 @@ code {
 
                                                      /* CSS */
  .button-36 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
    background-image: linear-gradient(92.88deg, #ffffff 9.16%, #ffffff 43.89%, #ffffff 64.72%);
    border-radius: 8px;
    border: 5px solid #5643CC;
@@ -146,4 +150,54 @@ code {
   .button-36 {
     padding: 0 2.6rem;
   }
+
+}
+@media (max-width: 500px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
+  .winner-popup{
+    width: 77% !important;
+  }
+  .square{
+
+    height:70px;
+    width: 70px;
+    margin:10px;
+  }
+  .StartPage
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content:center;
+    height: calc(100vh - 98px);
+    flex-direction: column;
+  }
+}
+.StartPage
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content:center;
+  height: calc(100vh - 98px);
+  flex-direction: column;
+}
+
+.winner-popup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 12px;
+  align-content:center;
+  border-radius: 15px;
+  color: #001133;
+  height: 50%;
+  width: 30%;
+  position: absolute;
+  background: url("Untitled design.gif") repeat;
+  background-size: cover;
+  z-index: 100;
 }
