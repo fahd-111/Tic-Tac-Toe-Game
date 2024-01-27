@@ -1,22 +1,29 @@
 import Board from "./Board";
-import {useState} from "react";
+import { useState } from "react";
 
 const Start = () => {
+    const [showBoard, setShowBoard] = useState(false);
 
-    const [pressed, setPressed] = useState(false);
-    const handleClick = () => {
-       setPressed(true);
-    }
+    const handleStart = () => {
+        // Set showBoard to true when the Start button is clicked
+        setShowBoard(true);
+    };
+
     return (
         <>
-            <div className="StartPage ">
-                {pressed ? <Board/> :
-                    <button onClick={handleClick}
-                    className={'button-36'}>
-                        Start
-                    </button>}
-            </div>
+
+                {!showBoard ? (
+                    <div>
+
+                        <button className={"button-29"} onClick={handleStart}>Start Game</button>
+                    </div>
+                ) : (
+                    <div  style={{ marginTop: -120 }}>
+                    <Board />
+                        </div>
+                    )}
         </>
-    )
-}
+    );
+};
+
 export default Start;

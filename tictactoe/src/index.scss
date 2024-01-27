@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+//
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,18 +10,16 @@ body {
 }
 .App {
   text-align: center;
-  background-color: #001133;
-  display: flex;
-  color: #fff;
-  align-items: center;
-  justify-content: center;
-  align-content:center;
+
   height: 100vh;
 
 
 }
 
-                                                     /* CSS */
+/* CSS */
+
+
+
 .button-29 {
   align-items: center;
   appearance: none;
@@ -64,10 +64,7 @@ body {
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
-.StartPage{
-width: calc(80% - 350px);
 
-}
 
 .square{
   display: flex;
@@ -80,17 +77,29 @@ width: calc(80% - 350px);
   font-size: 24px;
   line-height: 60px;
   background:  #FFF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  // Added box-shadow transition
+
+  &:hover {
+    transform: scale(1.03);  // Scale the square on hover
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+  }
 }
+
+
 .Board {
+
   display: grid;
   align-items: center;
   flex-direction: column;
-  border-radius:15px;
+  border-radius: 15px;
   padding: 20px;
   flex-wrap: wrap;
   justify-content: center;
   background: #FFE79E;
   align-content: center;
+
+  // Neon border effect
+  box-shadow: 0 0 05px #f1b500, 0 0 10px #fae94b, 0 0 15px #ffd100;
 }
 .game-info{
   display: flex;
@@ -168,36 +177,162 @@ code {
   .StartPage
   {
     display: flex;
-    align-items: center;
+    align-items: center !important;
     justify-content: center;
     align-content:center;
     height: calc(100vh - 98px);
     flex-direction: column;
   }
 }
-.StartPage
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content:center;
-  height: calc(100vh - 98px);
-  flex-direction: column;
-}
+//.StartPage
+//{
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  align-content:center;
+//  height: calc(100vh - 98px);
+//  flex-direction: column;
+//}
 
 .winner-popup{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 60px;
+  //padding-top: 60px;
   font-size: 12px;
   align-content:center;
   border-radius: 15px;
   color: #001133;
-  height: 50%;
+  //height: 50%;
   width: 30%;
+  top: 0;
+  height: 30vh  ;
   position: absolute;
   background: url("Untitled design.gif") repeat;
   background-size: cover;
   z-index: 100;
+}
+/*.App {*/
+/*  text-align: center;*/
+/*  background-color: #282c34;*/
+/*}*/
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+
+
+
+// Helper function to generate multiple box shadows
+@function multiple-box-shadow($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value}, #{random(2000)}px #{random(2000)}px #FFF';
+  }
+
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+.fixed-section {
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow: hidden;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStar 50s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 1000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar 100s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 150s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
+
+#title {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: 'lato', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  letter-spacing: 10px;
+  margin-top: -60px;
+  padding-left: 10px;
+
+  span {
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
 }
