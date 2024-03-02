@@ -11,7 +11,6 @@ const Start = () => {
 
     return (
         <>
-
                 {!showBoard ? (
                     <div>
 
